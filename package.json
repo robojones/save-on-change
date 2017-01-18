@@ -1,0 +1,36 @@
+{
+  "name": "save-on-change",
+  "version": "1.0.0",
+  "description": "automatically save objects into JSON files",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robojones/save-on-change.git"
+  },
+  "keywords": [
+    "JSON",
+    "save",
+    "automatically",
+    "auto",
+    "save",
+    "config",
+    "read",
+    "file"
+  ],
+  "author": "robojones",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robojones/save-on-change/issues"
+  },
+  "homepage": "https://github.com/robojones/save-on-change#readme",
+  "devDependencies": {
+    "functs": "^1.1.7",
+    "mocha": "^3.2.0"
+  }
+}
