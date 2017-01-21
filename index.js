@@ -54,7 +54,7 @@ function wrap(o, change) {
 
   return new Proxy(o, {
     set(o, prop, v) {
-      if(typeof o === 'object') {
+      if(typeof v === 'object') {
 
         if(innerCache[prop] !== v) {
           change()
