@@ -33,9 +33,9 @@ function autoSave(filename, onSave) {
     const json = JSON.stringify(object)
 
     if(typeof onSave === 'function') {
-      fs.writeFile(filepath, json, () => {
+      fs.writeFile(filepath, json, (err) => {
 
-        onSave(cache[filepath])
+        onSave(err)
 
         if(changed) {
           process.nextTick(save)
