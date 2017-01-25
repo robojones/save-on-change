@@ -65,6 +65,8 @@ function wrap(o, change) {
       }
 
       o[prop] = v
+
+      return true
     },
     get(o, prop) {
       if(typeof o[prop] === 'object') {
