@@ -1,6 +1,6 @@
 {
   "name": "save-on-change",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "automatically save objects into JSON files",
   "main": "index.js",
   "scripts": {

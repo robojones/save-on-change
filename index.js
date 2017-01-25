@@ -30,7 +30,7 @@ function autoSave(filename, onSave) {
     changed = false
     writing = true
 
-    const json = JSON.stringify(object)
+    const json = JSON.stringify(object, null, 2)
 
     if(typeof onSave === 'function') {
       fs.writeFile(filepath, json, (err) => {
