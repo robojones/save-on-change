@@ -73,7 +73,7 @@ function wrap(o, change) {
         if(prop in innerCache) {
           return innerCache[prop]
         } else {
-          return innerCache[prop] = wrap(o[prop])
+          return innerCache[prop] = wrap(o[prop], change)
         }
       } else {
         return o[prop]
