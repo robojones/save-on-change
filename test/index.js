@@ -36,6 +36,16 @@ describe('autoSave(filename[, onSave])', function () {
 
       assert.strictEqual(a.b, a.b)
     })
+
+    it('should return another proxy if the object gets overwritten', function () {
+      const a = this.autoSave(FILE)
+      a.b = {}
+      const c = a.b
+      a.b = {}
+      const d = a.b
+
+      assert.notStrictEqual(c, d)
+    })
   })
 
   describe('with onSave', function () {

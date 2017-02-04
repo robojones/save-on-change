@@ -21,7 +21,7 @@ function autoSave(filename, onSave) {
       changed = true
 
       if(!writing) {
-        process.nextTick(save)
+        setImmediate(save)
       }
     }
   }
@@ -38,7 +38,7 @@ function autoSave(filename, onSave) {
         onSave(err)
 
         if(changed) {
-          process.nextTick(save)
+          setImmediate(save)
         } else {
           writing = false
         }
@@ -66,10 +66,14 @@ function wrap(o, change) {
 
       o[prop] = v
 
+      if(innerCache.hasOwnProperty(prop)) {
+        delete innerCache[prop]
+      }
+
       return true
     },
     get(o, prop) {
-      if(typeof o[prop] === 'object') {
+      if(o.hasOwnProperty(prop) && typeof o[prop] === 'object') {
         if(prop in innerCache) {
           return innerCache[prop]
         } else {
